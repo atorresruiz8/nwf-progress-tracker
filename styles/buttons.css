@@ -1,0 +1,40 @@
+/* Button styles */
+button {
+  margin-bottom: 10px;
+  padding: 15px 15px;
+  font-family: Roboto, Arial;
+  font-weight: 500;
+  white-space: normal;
+  word-wrap: break-word;
+  width: 150px;
+}
+
+.main button {
+  font-size: 20px;
+  cursor: pointer;
+  color: rgb(250, 249, 246);
+}
+
+.rise-of-justice-button, .reflection-of-the-moon-button {
+  background-color: rgb(31, 81, 255);
+}
+
+.binds-of-the-hanged-man-button, .collapse-of-the-tower-button {
+  background-color: rgb(205, 127, 50);
+}
+
+.pain-of-death-button {
+  background-color: rgb(54, 69, 79);
+}
+
+.theater-of-temperance-button, .melody-of-judgement-button {
+  background-color: rgb(0, 163, 108);
+}
+
+.kiss-of-devil-button, .heat-of-the-sun-button {
+  background-color: rgb(227, 66, 52);
+}
+
+.shooting-of-the-star-button {
+  background-color: rgb(255, 191, 0);
+}

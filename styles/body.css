@@ -1,0 +1,22 @@
+/* Main styles */
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.top-row,
+.second-row,
+.third-row,
+.fourth-row,
+.bottom-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100px;
+  margin-right: 20px;
+  margin-top: 20px;
+  flex-basis: 1fr;
+}
