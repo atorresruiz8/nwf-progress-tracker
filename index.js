@@ -38,7 +38,7 @@ arcarum.push(
   starButton, moonButton, sunButton, judgementButton
   );
 
-const render = () => {
+const setupButtons = () => {
   // Add an event listener to each button to know which has
   // been clicked recently
   arcarum.forEach((button) => {
@@ -50,7 +50,7 @@ const render = () => {
 const handleClick = (event) => {
   const buttonText = event.target.textContent;
   if (buttonText === "Rise of Justice") {
-    console.log("justice button was pressed"); 
+    console.log("justice button was pressed");
   } else if (buttonText === "Binds of the Hanged Man") {
     console.log("hanged man button was pressed");
   } else if (buttonText === "Pain of Death") {
@@ -70,7 +70,30 @@ const handleClick = (event) => {
   } else if (buttonText === "Melody of Judgement") {
     console.log("judgement button was pressed");
   }
-  
+  // Send the buttonText to the render function so we know
+  // which material spread to load
+  render(buttonText);
 }
 
-render();
+// This function will check which button it received
+// and display the appropriate HTML
+const render = (buttonText) => {
+  // Reset the page
+  document.getElementById("container").innerHTML = "";
+  
+  // This is the container we will be adding HTML to
+  let element = document.createElement("div");
+
+  if (buttonText === "Rise of Justice") {
+      // create elements displaying progress for
+      // Rise of Justice uncap
+  } else { // create elements for displaying progress on the rest
+    console.log("f");
+  }
+
+  // add the element to the container
+  const arcarumList = document.getElementById("container");
+  arcarumList.appendChild(element);
+}
+
+setupButtons();
