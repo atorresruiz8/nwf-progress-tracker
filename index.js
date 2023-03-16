@@ -50,7 +50,7 @@ const render = () => {
 const handleClick = (event) => {
   const buttonText = event.target.textContent;
   if (buttonText === "Rise of Justice") {
-    console.log("justice button was pressed");
+    console.log("justice button was pressed"); 
   } else if (buttonText === "Binds of the Hanged Man") {
     console.log("hanged man button was pressed");
   } else if (buttonText === "Pain of Death") {
