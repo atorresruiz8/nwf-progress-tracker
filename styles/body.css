@@ -1,5 +1,6 @@
 /* Main styles */
-.main {
+
+.container {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -19,4 +20,15 @@
   margin-right: 20px;
   margin-top: 20px;
   flex-basis: 1fr;
+}
+
+.select-message {
+  color: rgb(139, 148, 158);
+  font-weight: 500;
+  font-size: 35px;
+  font-family: Roboto, Arial;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
