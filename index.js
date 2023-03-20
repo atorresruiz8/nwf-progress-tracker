@@ -187,34 +187,34 @@ const render = (buttonText) => {
   
   // Check which button has been pressed so we know what elements to load into the table
   if (buttonText === "Rise of Justice") {
-      table.style = "background-color: rgb(31, 81, 255)";
+      table.style = "background-color: rgb(31, 81, 255); opacity: 100%;";
       setupTable("justice");
   } else if (buttonText === "Binds of the Hanged Man") {
-      table.style = "background-color: rgb(205, 127, 50)";
+      table.style = "background-color: rgb(205, 127, 50); opacity: 100%;";
       setupTable("hanged-man");
   } else if (buttonText === "Pain of Death") {
-      table.style = "background-color: rgb(54, 69, 79)";
+      table.style = "background-color: rgb(54, 69, 79); opacity: 100%;";
       setupTable("death");
   } else if (buttonText === "Theater of Temperance") {
-      table.style = "background-color: rgb(0, 163, 108)";
+      table.style = "background-color: rgb(0, 163, 108); opacity: 100%;";
       setupTable("temperance");
   } else if (buttonText === "Kiss of the Devil") {
-      table.style = "background-color: rgb(227, 66, 52)";
+      table.style = "background-color: rgb(227, 66, 52); opacity: 100%;";
       setupTable("devil");
   } else if (buttonText === "Collapse of the Tower") {
-      table.style = "background-color: rgb(205, 127, 50)";
+      table.style = "background-color: rgb(205, 127, 50); opacity: 100%;";
       setupTable("tower");
   } else if (buttonText === "Shooting of the Star") {
-      table.style = "background-color: rgb(255, 191, 0)";
+      table.style = "background-color: rgb(255, 191, 0); opacity: 100%;";
       setupTable("star");
   } else if (buttonText === "Reflection of the Moon") {
-      table.style = "background-color: rgb(31, 81, 255)";
+      table.style = "background-color: rgb(31, 81, 255); opacity: 100%;";
       setupTable("moon");
   } else if (buttonText === "Heat of the Sun") {
-      table.style = "background-color: rgb(227, 66, 52)";
+      table.style = "background-color: rgb(227, 66, 52); opacity: 100%;";
       setupTable("sun");
   } else if (buttonText === "Melody of Judgement") {
-      table.style = "background-color: rgb(0, 163, 108)";
+      table.style = "background-color: rgb(0, 163, 108); opacity: 100%;";
       setupTable("judgement");
   }
 
@@ -223,7 +223,6 @@ const render = (buttonText) => {
   arcarumList.appendChild(element);
   
   // Add the table to the screen
-  table.style = "opacity: 100%";
   element.appendChild(table);
 }
 

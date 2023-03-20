@@ -38,6 +38,7 @@
 table {
   border-collapse: collapse;
   width: 100%;
+  margin-top: 20px;
 }
 
 /* Style the table cells */
@@ -45,6 +46,9 @@ td, th, tr {
   border: 1px solid black;
   padding: 8px;
   text-align: left;
+  font-family: Roboto, Arial;
+  font-weight: 500;
+  font-size: 18px;
 }
 
 /* Style the table header cells */
