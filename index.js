@@ -9,6 +9,10 @@ let arcarum = [];
 // Retrieve localStorage
 const savedProgress = JSON.parse(localStorage.getItem("uncapProgress"));
 
+// Create a table that will display the materials for each step of the uncap process
+// This table will be updated to match the corresponding button pressed  
+let table = document.createElement("table");
+
 // Check if it's an array
 if (Array.isArray(savedProgress)) {
   uncapProgress = savedProgress;
@@ -69,28 +73,28 @@ const setupTable = (table) => {
 // Controller
 const handleClick = (event) => {
   const buttonText = event.target.textContent;
-  // debating if I need these checks
-  // if (buttonText === "Rise of Justice") {
-  //   console.log("justice button was pressed");
-  // } else if (buttonText === "Binds of the Hanged Man") {
-  //   console.log("hanged man button was pressed");
-  // } else if (buttonText === "Pain of Death") {
-  //   console.log("death button was pressed");
-  // } else if (buttonText === "Theater of Temperance") {
-  //   console.log("temperance button was pressed");
-  // } else if (buttonText === "Kiss of the Devil") {
-  //   console.log("devil button was pressed");
-  // } else if (buttonText === "Collapse of the Tower") {
-  //   console.log("tower button was pressed");
-  // } else if (buttonText === "Shooting of the Star") {
-  //   console.log("star button was pressed");
-  // } else if (buttonText === "Reflection of the Moon") {
-  //   console.log("moon button was pressed");
-  // } else if (buttonText === "Heat of the Sun") {
-  //   console.log("sun button was pressed");
-  // } else if (buttonText === "Melody of Judgement") {
-  //   console.log("judgement button was pressed");
-  // }
+  // Check which button was pressed, then prepare to update the table as needed
+  if (buttonText === "Rise of Justice") {
+    table.style.backgroundColor = "rgb(31, 81, 255)";
+  } else if (buttonText === "Binds of the Hanged Man") {
+    table.style.backgroundColor = "rgb(205, 127, 50)";
+  } else if (buttonText === "Pain of Death") {
+    table.style.backgroundColor = "rgb(54, 69, 79)";
+  } else if (buttonText === "Theater of Temperance") {
+    table.style.backgroundColor = "rgb(0, 163, 108)";
+  } else if (buttonText === "Kiss of the Devil") {
+    table.style.backgroundColor = "rgb(227, 66, 52)";
+  } else if (buttonText === "Collapse of the Tower") {
+    table.style.backgroundColor = "rgb(205, 127, 50)";
+  } else if (buttonText === "Shooting of the Star") {
+    table.style.backgroundColor = "rgb(255, 191, 0)";
+  } else if (buttonText === "Reflection of the Moon") {
+    table.style.backgroundColor = "rgb(31, 81, 255)";
+  } else if (buttonText === "Heat of the Sun") {
+    table.style.backgroundColor = "rgb(227, 66, 52)";
+  } else if (buttonText === "Melody of Judgement") {
+    table.style.backgroundColor = "rgb(0, 163, 108)";
+  }
 
   // Send the buttonText to the render function so we know which material spread to load
   render(buttonText);
@@ -103,16 +107,11 @@ const render = (buttonText) => {
 
   // This is the container we will be adding HTML to
   let element = document.createElement("div");
-
-  // Create a table that will display the materials for each step of the uncap process
-  // This table will be updated to match the corresponding button pressed
-  let table = document.createElement("table");
   
   // Check which button has been pressed so we know what elements to load into the table
   if (buttonText === "Rise of Justice") {
       // create elements displaying progress for Rise of Justice uncap
-      let newTable = setupTable(table);
-      element.appendChild(newTable);
+      
   } else { // create elements for displaying progress on the rest
     console.log("f");
   }
@@ -120,6 +119,9 @@ const render = (buttonText) => {
   // add the element to the container
   const arcarumList = document.getElementById("container");
   arcarumList.appendChild(element);
+  
+  // Add the table to the screen
+  element.appendChild(setupTable(table));
 }
 
 setupButtons();

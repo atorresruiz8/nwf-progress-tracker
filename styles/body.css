@@ -32,3 +32,23 @@
   align-items: center;
   justify-content: center;
 }
+
+/* Styles for the tables */
+/* Style the table */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* Style the table cells */
+td, th {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+
+/* Style the table header cells */
+th {
+  background-color: lightgray;
+  font-weight: bold;
+}
