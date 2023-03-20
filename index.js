@@ -53,31 +53,125 @@ const setupButtons = () => {
   });
 }
 
+const setupTable = (arcarum) => {
+  // TODO: add checks to see which uncap level we're displaying
+
+  // Setup first row
+  table.rows[0].cells[0].innerHTML = "1 Star Uncap";
+  table.rows[0].cells[1].innerHTML = "Need";
+  table.rows[0].cells[2].innerHTML = "Have";
+
+  // Setup second row
+  table.rows[1].cells[0].innerHTML = "New World Quartz";
+  table.rows[1].cells[1].innerHTML = "5";
+  table.rows[1].cells[2].innerHTML = "X";
+
+  // Setup third row
+  table.rows[2].cells[1].innerHTML = "70";
+  table.rows[2].cells[2].innerHTML = "X";
+
+  // Setup fourth row
+  table.rows[3].cells[1].innerHTML = "100";
+  table.rows[3].cells[2].innerHTML = "X";
+
+  // Setup fifth row
+  table.rows[4].cells[1].innerHTML = "15";
+  table.rows[4].cells[2].innerHTML = "X";
+
+  // Setup sixth row
+  table.rows[5].cells[0].innerHTML = "Malice Fragment";
+  table.rows[5].cells[1].innerHTML = "30";
+  table.rows[5].cells[2].innerHTML = "X";
+
+  // Setup seventh row
+  table.rows[6].cells[1].innerHTML = "30";
+  table.rows[6].cells[2].innerHTML = "X";
+
+  // Setup eighth row
+  table.rows[7].cells[1].innerHTML = "0";
+  table.rows[7].cells[2].innerHTML = "0";
+
+  // This switch statement checks which weapon we're looking at, so we can display appropriate material names
+  switch (arcarum) {
+    case "justice":
+      table.rows[2].cells[0].innerHTML = "Justice Veritas";
+      table.rows[3].cells[0].innerHTML = "Water Verum Proof";
+      table.rows[4].cells[0].innerHTML = "Aqua Luster";
+      table.rows[6].cells[0].innerHTML = "Aquaborne Astra";
+      table.rows[7].cells[0].innerHTML = "Justice Idean";
+      break;
+    case "hanged-man":
+      table.rows[2].cells[0].innerHTML = "Hanged Man Veritas";
+      table.rows[3].cells[0].innerHTML = "Earth Verum Proof";
+      table.rows[4].cells[0].innerHTML = "Terra Luster";
+      table.rows[6].cells[0].innerHTML = "Earthborne Astra";
+      table.rows[7].cells[0].innerHTML = "Hanged Man Idean";
+      break;
+    case "death": // TODO: update the table size for death and star
+      table.rows[2].cells[0].innerHTML = "Death Veritas";
+      table.rows[3].cells[0].innerHTML = "Earth Verum Proof";
+      table.rows[4].cells[0].innerHTML = "Terra Luster";
+      table.rows[6].cells[0].innerHTML = "Darkborne Astra";
+      table.rows[7].cells[0].innerHTML = "Death Idean";
+      break;
+    case "temperance":
+      table.rows[2].cells[0].innerHTML = "Temperance Veritas";
+      table.rows[3].cells[0].innerHTML = "Wind Verum Proof";
+      table.rows[4].cells[0].innerHTML = "Ventus Luster";
+      table.rows[6].cells[0].innerHTML = "Windborne Astra";
+      table.rows[7].cells[0].innerHTML = "Temperance Idean";
+      break;
+    case "devil":
+      table.rows[2].cells[0].innerHTML = "Devil Veritas";
+      table.rows[3].cells[0].innerHTML = "Fire Verum Proof";
+      table.rows[4].cells[0].innerHTML = "Ignis Luster";
+      table.rows[6].cells[0].innerHTML = "Flameborne Astra";
+      table.rows[7].cells[0].innerHTML = "Devil Idean";
+      break;
+    case "tower":
+      table.rows[2].cells[0].innerHTML = "Tower Veritas";
+      table.rows[3].cells[0].innerHTML = "Earth Verum Proof";
+      table.rows[4].cells[0].innerHTML = "Terra Luster";
+      table.rows[6].cells[0].innerHTML = "Earthborne Astra";
+      table.rows[7].cells[0].innerHTML = "Tower Idean";
+      break;
+    case "star":
+      table.rows[2].cells[0].innerHTML = "Star Veritas";
+      table.rows[3].cells[0].innerHTML = "Wind Verum Proof";
+      table.rows[4].cells[0].innerHTML = "Ventus Luster";
+      table.rows[6].cells[0].innerHTML = "Lightborne Astra";
+      table.rows[7].cells[0].innerHTML = "Star Idean";
+      break;
+    case "moon":
+      table.rows[2].cells[0].innerHTML = "Moon Veritas";
+      table.rows[3].cells[0].innerHTML = "Water Verum Proof";
+      table.rows[4].cells[0].innerHTML = "Aqua Luster";
+      table.rows[6].cells[0].innerHTML = "Aquaborne Astra";
+      table.rows[7].cells[0].innerHTML = "Moon Idean";
+      break;
+    case "sun":
+      table.rows[2].cells[0].innerHTML = "Sun Veritas";
+      table.rows[3].cells[0].innerHTML = "Fire Verum Proof";
+      table.rows[4].cells[0].innerHTML = "Ignis Luster";
+      table.rows[6].cells[0].innerHTML = "Flameborne Astra";
+      table.rows[7].cells[0].innerHTML = "Sun Idean";
+      break;
+    case "judgement":
+      table.rows[2].cells[0].innerHTML = "Judgement Veritas";
+      table.rows[3].cells[0].innerHTML = "Wind Verum Proof";
+      table.rows[4].cells[0].innerHTML = "Ventus Luster";
+      table.rows[6].cells[0].innerHTML = "Windborne Astra";
+      table.rows[7].cells[0].innerHTML = "Judgement Idean";
+      break;
+    default:
+      console.log("no arcarum was loaded");
+  }
+}
+
 // Controller
 const handleClick = (event) => {
+  // This lets us know which button was just pressed based on the button's text
   const buttonText = event.target.textContent;
-  // Check which button was pressed, then prepare to update the table as needed
-  if (buttonText === "Rise of Justice") {
-    table.style = "background-color: rgb(31, 81, 255)";
-  } else if (buttonText === "Binds of the Hanged Man") {
-    table.style = "background-color: rgb(205, 127, 50)";
-  } else if (buttonText === "Pain of Death") {
-    table.style = "background-color: rgb(54, 69, 79)";
-  } else if (buttonText === "Theater of Temperance") {
-    table.style = "background-color: rgb(0, 163, 108)";
-  } else if (buttonText === "Kiss of the Devil") {
-    table.style = "background-color: rgb(227, 66, 52)";
-  } else if (buttonText === "Collapse of the Tower") {
-    table.style = "background-color: rgb(205, 127, 50)";
-  } else if (buttonText === "Shooting of the Star") {
-    table.style = "background-color: rgb(255, 191, 0)";
-  } else if (buttonText === "Reflection of the Moon") {
-    table.style = "background-color: rgb(31, 81, 255)";
-  } else if (buttonText === "Heat of the Sun") {
-    table.style = "background-color: rgb(227, 66, 52)";
-  } else if (buttonText === "Melody of Judgement") {
-    table.style = "background-color: rgb(0, 163, 108)";
-  }
 
   // Send the buttonText to the render function so we know which material spread to load
   render(buttonText);
@@ -93,10 +187,35 @@ const render = (buttonText) => {
   
   // Check which button has been pressed so we know what elements to load into the table
   if (buttonText === "Rise of Justice") {
-      // update the table to display progress for Rise of Justice uncap
-      
-  } else { // create elements for displaying progress on the rest
-    console.log("f");
+      table.style = "background-color: rgb(31, 81, 255)";
+      setupTable("justice");
+  } else if (buttonText === "Binds of the Hanged Man") {
+      table.style = "background-color: rgb(205, 127, 50)";
+      setupTable("hanged-man");
+  } else if (buttonText === "Pain of Death") {
+      table.style = "background-color: rgb(54, 69, 79)";
+      setupTable("death");
+  } else if (buttonText === "Theater of Temperance") {
+      table.style = "background-color: rgb(0, 163, 108)";
+      setupTable("temperance");
+  } else if (buttonText === "Kiss of the Devil") {
+      table.style = "background-color: rgb(227, 66, 52)";
+      setupTable("devil");
+  } else if (buttonText === "Collapse of the Tower") {
+      table.style = "background-color: rgb(205, 127, 50)";
+      setupTable("tower");
+  } else if (buttonText === "Shooting of the Star") {
+      table.style = "background-color: rgb(255, 191, 0)";
+      setupTable("star");
+  } else if (buttonText === "Reflection of the Moon") {
+      table.style = "background-color: rgb(31, 81, 255)";
+      setupTable("moon");
+  } else if (buttonText === "Heat of the Sun") {
+      table.style = "background-color: rgb(227, 66, 52)";
+      setupTable("sun");
+  } else if (buttonText === "Melody of Judgement") {
+      table.style = "background-color: rgb(0, 163, 108)";
+      setupTable("judgement");
   }
 
   // add the element to the container
