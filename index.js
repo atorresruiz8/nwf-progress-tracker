@@ -9,9 +9,12 @@ let arcarum = [];
 // Retrieve localStorage
 const savedProgress = JSON.parse(localStorage.getItem("uncapProgress"));
 
-// Create a table that will display the materials for each step of the uncap process
+// Get the table that will display the materials for each step of the uncap process
 // This table will be updated to match the corresponding button pressed  
-let table = document.createElement("table");
+let table = document.getElementById("progressTable");
+
+// TODO: There should be a button for 1 Star, 2 Star, 3 Star, 4 Star, 5 Star and then all uncaps at once
+// TODO: These buttons will display only the materials for the selected uncap level, or all of them if the last one is pressed
 
 // Check if it's an array
 if (Array.isArray(savedProgress)) {
@@ -50,50 +53,30 @@ const setupButtons = () => {
   });
 }
 
-const setupTable = (table) => {
-  // This table will have 3 columns and 8 rows
-  // Loop through each row
-  for (let i = 0; i < 8; i++) {
-    // Insert a new row into the table
-    let row = table.insertRow(i);
-
-    // Loop through each column for the current row
-    for (let j = 0; j < 3; j++) {
-      // Insert a new cell into the current row
-      let cell = row.insertCell(j);
-
-      // Add some text to the cell
-      cell.innerText = `Row ${i+1}, Column ${j+1}`;
-    }
-  }
-
-  return table;
-}
-
 // Controller
 const handleClick = (event) => {
   const buttonText = event.target.textContent;
   // Check which button was pressed, then prepare to update the table as needed
   if (buttonText === "Rise of Justice") {
-    table.style.backgroundColor = "rgb(31, 81, 255)";
+    table.style = "background-color: rgb(31, 81, 255)";
   } else if (buttonText === "Binds of the Hanged Man") {
-    table.style.backgroundColor = "rgb(205, 127, 50)";
+    table.style = "background-color: rgb(205, 127, 50)";
   } else if (buttonText === "Pain of Death") {
-    table.style.backgroundColor = "rgb(54, 69, 79)";
+    table.style = "background-color: rgb(54, 69, 79)";
   } else if (buttonText === "Theater of Temperance") {
-    table.style.backgroundColor = "rgb(0, 163, 108)";
+    table.style = "background-color: rgb(0, 163, 108)";
   } else if (buttonText === "Kiss of the Devil") {
-    table.style.backgroundColor = "rgb(227, 66, 52)";
+    table.style = "background-color: rgb(227, 66, 52)";
   } else if (buttonText === "Collapse of the Tower") {
-    table.style.backgroundColor = "rgb(205, 127, 50)";
+    table.style = "background-color: rgb(205, 127, 50)";
   } else if (buttonText === "Shooting of the Star") {
-    table.style.backgroundColor = "rgb(255, 191, 0)";
+    table.style = "background-color: rgb(255, 191, 0)";
   } else if (buttonText === "Reflection of the Moon") {
-    table.style.backgroundColor = "rgb(31, 81, 255)";
+    table.style = "background-color: rgb(31, 81, 255)";
   } else if (buttonText === "Heat of the Sun") {
-    table.style.backgroundColor = "rgb(227, 66, 52)";
+    table.style = "background-color: rgb(227, 66, 52)";
   } else if (buttonText === "Melody of Judgement") {
-    table.style.backgroundColor = "rgb(0, 163, 108)";
+    table.style = "background-color: rgb(0, 163, 108)";
   }
 
   // Send the buttonText to the render function so we know which material spread to load
@@ -110,7 +93,7 @@ const render = (buttonText) => {
   
   // Check which button has been pressed so we know what elements to load into the table
   if (buttonText === "Rise of Justice") {
-      // create elements displaying progress for Rise of Justice uncap
+      // update the table to display progress for Rise of Justice uncap
       
   } else { // create elements for displaying progress on the rest
     console.log("f");
@@ -121,7 +104,8 @@ const render = (buttonText) => {
   arcarumList.appendChild(element);
   
   // Add the table to the screen
-  element.appendChild(setupTable(table));
+  table.style = "opacity: 100%";
+  element.appendChild(table);
 }
 
 setupButtons();

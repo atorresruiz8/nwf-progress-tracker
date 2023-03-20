@@ -41,7 +41,7 @@ table {
 }
 
 /* Style the table cells */
-td, th {
+td, th, tr {
   border: 1px solid black;
   padding: 8px;
   text-align: left;
