@@ -176,11 +176,14 @@ const handleClick = (event) => {
 
 // When this button is clicked, we need to re-render all of the buttons and return to the previous layout
 const handleBackButtonClick = (event) => {
-  // Get the container whose innerHTML was previously set to nothing when loading a table
-  const container = document.getElementById("container");
+  // // Get the container whose innerHTML was previously set to nothing when loading a table
+  // const container = document.getElementById("container");
 
-  // Get the previously saved innerHTML and set it as the container's new innerHTML
-  container.innerHTML = localStorage.getItem("savedInnerHTML");
+  // // Get the previously saved innerHTML and set it as the container's new innerHTML
+  // container.innerHTML = localStorage.getItem("savedInnerHTML");
+  
+  // Refresh the page so the previous HTML displays instead of the table
+  location.reload();
 }
 
 const saveInnerHTML = () => {
