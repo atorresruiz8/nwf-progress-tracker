@@ -13,9 +13,6 @@ const savedProgress = JSON.parse(localStorage.getItem("uncapProgress"));
 // This table will be updated to match the corresponding button pressed  
 let table = document.getElementById("progressTable");
 
-// TODO: There should be a button for 1 Star, 2 Star, 3 Star, 4 Star, 5 Star and then all uncaps at once
-// TODO: These buttons will display only the materials for the selected uncap level, or all of them if the last one is pressed
-
 // Check if it's an array
 if (Array.isArray(savedProgress)) {
   uncapProgress = savedProgress;
@@ -46,8 +43,7 @@ arcarum.push(
   );
 
 const setupButtons = () => {
-  // Add an event listener to each button to know which has
-  // been clicked recently
+  // Add an event listener to each button to know which has been clicked recently
   arcarum.forEach((button) => {
     button.addEventListener("click", handleClick);
   });
@@ -136,7 +132,7 @@ const setupTable = (arcarum) => {
       table.rows[6].cells[0].innerHTML = "Earthborne Astra";
       table.rows[7].cells[0].innerHTML = "Tower Idean";
       break;
-    case "star":
+    case "star": // TODO: update the table size for death and star
       table.rows[2].cells[0].innerHTML = "Star Veritas";
       table.rows[3].cells[0].innerHTML = "Wind Verum Proof";
       table.rows[4].cells[0].innerHTML = "Ventus Luster";
@@ -180,16 +176,16 @@ const handleClick = (event) => {
 
 // When this button is clicked, we need to re-render all of the buttons and return to the previous layout
 const handleBackButtonClick = (event) => {
-  // Get the element whose innerHTML was previously set to nothing on loading a table
-  const element = document.getElementById("container");
+  // Get the container whose innerHTML was previously set to nothing when loading a table
+  const container = document.getElementById("container");
 
-  // Get the previously saved innerHTML and set it as the element's new innerHTML
+  // Get the previously saved innerHTML and set it as the container's new innerHTML
   const savedInnerHTML = localStorage.getItem("savedInnerHTML");
-  element.innerHTML = savedInnerHTML;
+  container.innerHTML = savedInnerHTML;
 }
 
 const saveInnerHTML = () => {
-  // Get the container element whose innerHTML we want saved for later use
+  // Get the container whose innerHTML we want saved for later use
   const container = document.getElementById("container");
 
   // Save the container's innerHTML to localStorage
@@ -243,6 +239,8 @@ const render = (buttonText) => {
   
   // Add the table to the screen
   element.appendChild(table);
+
+  // TODO: add a 1*, 2*, 3*, 4*, 5* and "all uncaps" button here to display different tables
 
   // Add a button that takes you back to the previous screen
   const backButton = document.createElement("button");
