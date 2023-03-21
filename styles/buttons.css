@@ -10,10 +10,22 @@ button {
 }
 
 .main button {
+  border-radius: 10px;
   font-size: 20px;
   cursor: pointer;
+}
+
+.rise-of-justice-button, 
+.reflection-of-the-moon-button,
+.binds-of-the-hanged-man-button, 
+.collapse-of-the-tower-button,
+.pain-of-death-button,
+.theater-of-temperance-button, 
+.melody-of-judgement-button, 
+.kiss-of-devil-button, 
+.heat-of-the-sun-button,
+.shooting-of-the-star-button {
   color: rgb(250, 249, 246);
-  border-radius: 10px;
   text-shadow: -1px -1px 0 #000, 
   1px -1px 0 #000, 
   -1px 1px 0 #000, 
@@ -42,4 +54,18 @@ button {
 
 .shooting-of-the-star-button {
   background-color: rgb(255, 191, 0);
+}
+
+.uncap-button {
+  margin-right: 10px;
+}
+
+.back-button {
+  margin-top: 30px;
+}
+
+.uncap-button,
+.back-button {
+  background-color: rgb(22, 27, 34); 
+  color: rgb(139, 148, 158);
 }

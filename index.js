@@ -49,12 +49,12 @@ const setupButtons = () => {
   });
 }
 
-const setupTable = (arcarum) => {
+const setupTable = (arcarum, uncapLevel) => {
   // TODO: add checks to see which uncap level we're displaying
   // TODO: make the "Have" column a textbox
 
   // Setup first row
-  table.rows[0].cells[0].innerHTML = "1 Star Uncap";
+  table.rows[0].cells[0].innerHTML = "1 &#9733; Uncap"; // &#9733; is HTML code for a solid star symbol
   table.rows[0].cells[1].innerHTML = "Need";
   table.rows[0].cells[2].innerHTML = "Have";
 
@@ -175,23 +175,17 @@ const handleClick = (event) => {
 }
 
 // When this button is clicked, we need to re-render all of the buttons and return to the previous layout
-const handleBackButtonClick = (event) => {
-  // // Get the container whose innerHTML was previously set to nothing when loading a table
-  // const container = document.getElementById("container");
-
-  // // Get the previously saved innerHTML and set it as the container's new innerHTML
-  // container.innerHTML = localStorage.getItem("savedInnerHTML");
-  
+const handleBackButtonClick = (event) => {  
   // Refresh the page so the previous HTML displays instead of the table
   location.reload();
 }
 
-const saveInnerHTML = () => {
-  // Get the container whose innerHTML we want saved for later use
-  const container = document.getElementById("container");
+const handleUncapButtonClick = (event) => {
+  // This lets us know which button was just pressed based on the button's text
+  const buttonText = event.target.textContent;
 
-  // Save the container's innerHTML to localStorage
-  localStorage.setItem("savedInnerHTML", container.innerHTML);
+  // Send the buttonText to the setupTable function so we know which material spread to load
+  
 }
 
 // This function will check which button it received and display the appropriate HTML
@@ -205,52 +199,89 @@ const render = (buttonText) => {
   // Check which button has been pressed so we know what elements to load into the table
   if (buttonText === "Rise of Justice") {
       table.style = "background-color: rgb(31, 81, 255); opacity: 100%;";
-      setupTable("justice");
+      setupTable("justice", "one");
   } else if (buttonText === "Binds of the Hanged Man") {
       table.style = "background-color: rgb(205, 127, 50); opacity: 100%;";
-      setupTable("hanged-man");
+      setupTable("hanged-man", "one");
   } else if (buttonText === "Pain of Death") {
       table.style = "background-color: rgb(54, 69, 79); opacity: 100%;";
-      setupTable("death");
+      setupTable("death", "one");
   } else if (buttonText === "Theater of Temperance") {
       table.style = "background-color: rgb(0, 163, 108); opacity: 100%;";
-      setupTable("temperance");
+      setupTable("temperance", "one");
   } else if (buttonText === "Kiss of the Devil") {
       table.style = "background-color: rgb(227, 66, 52); opacity: 100%;";
-      setupTable("devil");
+      setupTable("devil", "one");
   } else if (buttonText === "Collapse of the Tower") {
       table.style = "background-color: rgb(205, 127, 50); opacity: 100%;";
-      setupTable("tower");
+      setupTable("tower", "one");
   } else if (buttonText === "Shooting of the Star") {
       table.style = "background-color: rgb(255, 191, 0); opacity: 100%;";
-      setupTable("star");
+      setupTable("star", "one");
   } else if (buttonText === "Reflection of the Moon") {
       table.style = "background-color: rgb(31, 81, 255); opacity: 100%;";
-      setupTable("moon");
+      setupTable("moon", "one");
   } else if (buttonText === "Heat of the Sun") {
       table.style = "background-color: rgb(227, 66, 52); opacity: 100%;";
-      setupTable("sun");
+      setupTable("sun", "one");
   } else if (buttonText === "Melody of Judgement") {
       table.style = "background-color: rgb(0, 163, 108); opacity: 100%;";
-      setupTable("judgement");
+      setupTable("judgement", "one");
   }
 
   // add the element to the container
   const arcarumList = document.getElementById("container");
   arcarumList.appendChild(element);
-  
-  // Add the table to the screen
-  element.appendChild(table);
-
-  // TODO: add a 1*, 2*, 3*, 4*, 5* and "all uncaps" button here to display different tables
 
   // Add a button that takes you back to the previous screen
   const backButton = document.createElement("button");
   backButton.innerText = "Back";
-  backButton.style = "margin-top: 30px; background-color: rgb(22, 27, 34); color: rgb(139, 148, 158); font-size: 20px;";
+  backButton.classList.add("back-button");
   backButton.onclick = handleBackButtonClick;
   element.appendChild(backButton);
+  
+  // Add the table to the screen
+  element.appendChild(table);
+
+  // Create a container to store every button related to the uncap level
+  const uncapButtonsDiv = document.createElement("div");
+  uncapButtonsDiv.style = "display: flex; flex-direction: row; margin-top: 30px;";
+
+  // Add each uncap level to the container, then add a class name to the buttons so they are styled
+  const oneStarUncapButton = document.createElement("button");
+  oneStarUncapButton.innerHTML = "1 &#9733;"; // &#9733; is HTML code for a solid star symbol
+  oneStarUncapButton.classList.add("uncap-button");
+
+  const twoStarUncapButton = document.createElement("button");
+  twoStarUncapButton.innerHTML = "2 &#9733;";
+  twoStarUncapButton.classList.add("uncap-button");
+
+  const threeStarUncapButton = document.createElement("button");
+  threeStarUncapButton.innerHTML = "3 &#9733;";
+  threeStarUncapButton.classList.add("uncap-button");
+
+  const fourStarUncapButton = document.createElement("button");
+  fourStarUncapButton.innerHTML = "4 &#9733;";
+  fourStarUncapButton.classList.add("uncap-button");
+
+  const fiveStarUncapButton = document.createElement("button");
+  fiveStarUncapButton.innerHTML = "5 &#9733;";
+  fiveStarUncapButton.classList.add("uncap-button");
+
+  const fullUncapButton = document.createElement("button");
+  fullUncapButton.innerHTML = "Full Uncap";
+  fullUncapButton.classList.add("uncap-button");
+
+  // Append each button the container
+  uncapButtonsDiv.appendChild(oneStarUncapButton);
+  uncapButtonsDiv.appendChild(twoStarUncapButton);
+  uncapButtonsDiv.appendChild(threeStarUncapButton);
+  uncapButtonsDiv.appendChild(fourStarUncapButton);
+  uncapButtonsDiv.appendChild(fiveStarUncapButton);
+  uncapButtonsDiv.appendChild(fullUncapButton);
+
+  // Add the container to the element
+  element.appendChild(uncapButtonsDiv);
 }
 
-saveInnerHTML();
 setupButtons();
