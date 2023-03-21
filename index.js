@@ -55,6 +55,7 @@ const setupButtons = () => {
 
 const setupTable = (arcarum) => {
   // TODO: add checks to see which uncap level we're displaying
+  // TODO: make the "Have" column a textbox
 
   // Setup first row
   table.rows[0].cells[0].innerHTML = "1 Star Uncap";
@@ -177,6 +178,24 @@ const handleClick = (event) => {
   render(buttonText);
 }
 
+// When this button is clicked, we need to re-render all of the buttons and return to the previous layout
+const handleBackButtonClick = (event) => {
+  // Get the element whose innerHTML was previously set to nothing on loading a table
+  const element = document.getElementById("container");
+
+  // Get the previously saved innerHTML and set it as the element's new innerHTML
+  const savedInnerHTML = localStorage.getItem("savedInnerHTML");
+  element.innerHTML = savedInnerHTML;
+}
+
+const saveInnerHTML = () => {
+  // Get the container element whose innerHTML we want saved for later use
+  const container = document.getElementById("container");
+
+  // Save the container's innerHTML to localStorage
+  localStorage.setItem("savedInnerHTML", container.innerHTML);
+}
+
 // This function will check which button it received and display the appropriate HTML
 const render = (buttonText) => {
   // Reset the page
@@ -224,6 +243,14 @@ const render = (buttonText) => {
   
   // Add the table to the screen
   element.appendChild(table);
+
+  // Add a button that takes you back to the previous screen
+  const backButton = document.createElement("button");
+  backButton.innerText = "Back";
+  backButton.style = "margin-top: 30px; background-color: lightblue";
+  backButton.onclick = handleBackButtonClick;
+  element.appendChild(backButton);
 }
 
+saveInnerHTML();
 setupButtons();
