@@ -188,6 +188,38 @@ const handleUncapButtonClick = (event) => {
   
 }
 
+const setupUncapButtons = () => {
+  let uncapButtons = [];
+
+   // Add each uncap level to the container, then add a class name to the buttons so they are styled
+   const oneStarUncapButton = document.createElement("button");
+   oneStarUncapButton.innerHTML = "1 &#9733;"; // &#9733; is HTML code for a solid star symbol
+   oneStarUncapButton.classList.add("uncap-button");
+ 
+   const twoStarUncapButton = document.createElement("button");
+   twoStarUncapButton.innerHTML = "2 &#9733;";
+   twoStarUncapButton.classList.add("uncap-button");
+ 
+   const threeStarUncapButton = document.createElement("button");
+   threeStarUncapButton.innerHTML = "3 &#9733;";
+   threeStarUncapButton.classList.add("uncap-button");
+ 
+   const fourStarUncapButton = document.createElement("button");
+   fourStarUncapButton.innerHTML = "4 &#9733;";
+   fourStarUncapButton.classList.add("uncap-button");
+ 
+   const fiveStarUncapButton = document.createElement("button");
+   fiveStarUncapButton.innerHTML = "5 &#9733;";
+   fiveStarUncapButton.classList.add("uncap-button");
+ 
+   const fullUncapButton = document.createElement("button");
+   fullUncapButton.innerHTML = "Full Uncap";
+   fullUncapButton.classList.add("uncap-button");
+
+   uncapButtons.push(oneStarUncapButton, twoStarUncapButton, threeStarUncapButton, fourStarUncapButton, fiveStarUncapButton, fullUncapButton);
+   return uncapButtons;
+}
+
 // This function will check which button it received and display the appropriate HTML
 const render = (buttonText) => {
   // Reset the page
@@ -248,37 +280,15 @@ const render = (buttonText) => {
   uncapButtonsDiv.style = "display: flex; flex-direction: row; margin-top: 30px;";
 
   // Add each uncap level to the container, then add a class name to the buttons so they are styled
-  const oneStarUncapButton = document.createElement("button");
-  oneStarUncapButton.innerHTML = "1 &#9733;"; // &#9733; is HTML code for a solid star symbol
-  oneStarUncapButton.classList.add("uncap-button");
-
-  const twoStarUncapButton = document.createElement("button");
-  twoStarUncapButton.innerHTML = "2 &#9733;";
-  twoStarUncapButton.classList.add("uncap-button");
-
-  const threeStarUncapButton = document.createElement("button");
-  threeStarUncapButton.innerHTML = "3 &#9733;";
-  threeStarUncapButton.classList.add("uncap-button");
-
-  const fourStarUncapButton = document.createElement("button");
-  fourStarUncapButton.innerHTML = "4 &#9733;";
-  fourStarUncapButton.classList.add("uncap-button");
-
-  const fiveStarUncapButton = document.createElement("button");
-  fiveStarUncapButton.innerHTML = "5 &#9733;";
-  fiveStarUncapButton.classList.add("uncap-button");
-
-  const fullUncapButton = document.createElement("button");
-  fullUncapButton.innerHTML = "Full Uncap";
-  fullUncapButton.classList.add("uncap-button");
+  const uncapButtons = setupUncapButtons();
 
   // Append each button the container
-  uncapButtonsDiv.appendChild(oneStarUncapButton);
-  uncapButtonsDiv.appendChild(twoStarUncapButton);
-  uncapButtonsDiv.appendChild(threeStarUncapButton);
-  uncapButtonsDiv.appendChild(fourStarUncapButton);
-  uncapButtonsDiv.appendChild(fiveStarUncapButton);
-  uncapButtonsDiv.appendChild(fullUncapButton);
+  uncapButtonsDiv.appendChild(uncapButtons[0]);
+  uncapButtonsDiv.appendChild(uncapButtons[1]);
+  uncapButtonsDiv.appendChild(uncapButtons[2]);
+  uncapButtonsDiv.appendChild(uncapButtons[3]);
+  uncapButtonsDiv.appendChild(uncapButtons[4]);
+  uncapButtonsDiv.appendChild(uncapButtons[5]);
 
   // Add the container to the element
   element.appendChild(uncapButtonsDiv);
