@@ -180,8 +180,7 @@ const handleBackButtonClick = (event) => {
   const container = document.getElementById("container");
 
   // Get the previously saved innerHTML and set it as the container's new innerHTML
-  const savedInnerHTML = localStorage.getItem("savedInnerHTML");
-  container.innerHTML = savedInnerHTML;
+  container.innerHTML = localStorage.getItem("savedInnerHTML");
 }
 
 const saveInnerHTML = () => {
@@ -245,7 +244,7 @@ const render = (buttonText) => {
   // Add a button that takes you back to the previous screen
   const backButton = document.createElement("button");
   backButton.innerText = "Back";
-  backButton.style = "margin-top: 30px; background-color: lightblue";
+  backButton.style = "margin-top: 30px; background-color: rgb(22, 27, 34); color: rgb(139, 148, 158); font-size: 20px;";
   backButton.onclick = handleBackButtonClick;
   element.appendChild(backButton);
 }
