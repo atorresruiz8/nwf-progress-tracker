@@ -185,7 +185,7 @@ const handleUncapButtonClick = (event) => {
   const buttonText = event.target.textContent;
 
   // Send the buttonText to the setupTable function so we know which material spread to load
-  
+  console.log("uncap button " + buttonText + " was clicked...");
 }
 
 const setupUncapButtons = () => {
@@ -216,7 +216,12 @@ const setupUncapButtons = () => {
    fullUncapButton.innerHTML = "Full Uncap";
    fullUncapButton.classList.add("uncap-button");
 
+   // Add an event listener for clicking onto each button
    uncapButtons.push(oneStarUncapButton, twoStarUncapButton, threeStarUncapButton, fourStarUncapButton, fiveStarUncapButton, fullUncapButton);
+   uncapButtons.forEach(button => {
+    button.addEventListener("click", handleUncapButtonClick);
+   });
+
    return uncapButtons;
 }
 
