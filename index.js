@@ -49,6 +49,84 @@ const setupButtons = () => {
   });
 }
 
+const setupStarAndDeathTables = (arcarum, uncapLevel) => {
+    // Insert two more rows as Death uses more materials
+    let verumRow = table.insertRow(-1);
+    let verumTitleCell = verumRow.insertCell(0);
+    let verumNeedCell = verumRow.insertCell(1);
+    let verumHaveCell = verumRow.insertCell(2);
+
+    let lusterRow = table.insertRow(-1);
+    let lusterTitleCell = lusterRow.insertCell(0);
+    let lusterNeedCell = lusterRow.insertCell(1);
+    let lusterHaveCell = lusterRow.insertCell(2);
+
+  switch (arcarum) {
+    case "death":
+      table.rows[8].cells[0].innerHTML = "Water Verum Proof";
+      table.rows[9].cells[0].innerHTML = "Aqua Luster";
+      if (uncapLevel === "one") {
+        table.rows[8].cells[1].innerHTML = "50";
+        table.rows[8].cells[2].innerHTML = "X";
+        table.rows[9].cells[1].innerHTML = "7";
+        table.rows[9].cells[2].innerHTML = "X";
+      } else if (uncapLevel === "two") {
+        table.rows[8].cells[1].innerHTML = "75";
+        table.rows[8].cells[2].innerHTML = "X";
+        table.rows[9].cells[1].innerHTML = "15";
+        table.rows[9].cells[2].innerHTML = "X";
+      } else if (uncapLevel === "three") {
+        table.rows[8].cells[1].innerHTML = "100";
+        table.rows[8].cells[2].innerHTML = "X";
+        table.rows[9].cells[1].innerHTML = "25";
+        table.rows[9].cells[2].innerHTML = "X";
+      } else if (uncapLevel === "four") {
+        table.rows[8].cells[1].innerHTML = "125";
+        table.rows[8].cells[2].innerHTML = "X";
+        table.rows[9].cells[1].innerHTML = "30";
+        table.rows[9].cells[2].innerHTML = "X";
+      } else if (uncapLevel === "five") {
+        table.rows[8].cells[0].innerHTML = "Aqua Luster";
+        table.rows[8].cells[1].innerHTML = "35";
+        table.rows[8].cells[2].innerHTML = "X";
+        // remove table.rows[9]
+      }
+      break;
+    case "star":
+      table.rows[8].cells[0].innerHTML = "Fire Verum Proof";
+      table.rows[9].cells[0].innerHTML = "Ignis Luster";
+      if (uncapLevel === "one") {
+        table.rows[8].cells[1].innerHTML = "50";
+        table.rows[8].cells[2].innerHTML = "X";
+        table.rows[9].cells[1].innerHTML = "7";
+        table.rows[9].cells[2].innerHTML = "X";
+      } else if (uncapLevel === "two") {
+        table.rows[8].cells[1].innerHTML = "75";
+        table.rows[8].cells[2].innerHTML = "X";
+        table.rows[9].cells[1].innerHTML = "15";
+        table.rows[9].cells[2].innerHTML = "X";
+      } else if (uncapLevel === "three") {
+        table.rows[8].cells[1].innerHTML = "100";
+        table.rows[8].cells[2].innerHTML = "X";
+        table.rows[9].cells[1].innerHTML = "25";
+        table.rows[9].cells[2].innerHTML = "X";
+      } else if (uncapLevel === "four") {
+        table.rows[8].cells[1].innerHTML = "125";
+        table.rows[8].cells[2].innerHTML = "X";
+        table.rows[9].cells[1].innerHTML = "30";
+        table.rows[9].cells[2].innerHTML = "X";
+      } else if (uncapLevel === "five") {
+        table.rows[8].cells[0].innerHTML = "Ignis Luster";
+        table.rows[8].cells[1].innerHTML = "35";
+        table.rows[8].cells[2].innerHTML = "X";
+        // remove table.rows[9]
+      }
+      break;
+    default:
+      console.log("The table is setup.");
+  }
+}
+
 const setupTable = (arcarum, uncapLevel) => {
   // TODO: make the "Have" column a textbox
   // TODO: add images of each material
@@ -278,10 +356,22 @@ const setupTable = (arcarum, uncapLevel) => {
       table.rows[6].cells[0].innerHTML = "Earthborne Astra";
       table.rows[7].cells[0].innerHTML = "Hanged Man Idean";
       break;
-    case "death": // TODO: update the table size for death and star
+    case "death":
       table.rows[2].cells[0].innerHTML = "Death Veritas";
       table.rows[3].cells[0].innerHTML = "Earth Verum Proof";
       table.rows[4].cells[0].innerHTML = "Terra Luster";
+
+      if (uncapLevel === "one") {
+        setupStarAndDeathTables("death", "one");
+      } else if (uncapLevel === "two") {
+        setupStarAndDeathTables("death", "two");
+      } else if (uncapLevel === "three") {
+        setupStarAndDeathTables("death", "three");
+      } else if (uncapLevel === "four") {
+        setupStarAndDeathTables("death", "four");
+      } else if (uncapLevel === "five") {
+        setupStarAndDeathTables("death", "five");
+      }
 
       if (uncapLevel === "three" || uncapLevel === "four") {
         table.rows[5].cells[0].innerHTML = "Fediel's Jewel";
@@ -346,7 +436,7 @@ const setupTable = (arcarum, uncapLevel) => {
       table.rows[6].cells[0].innerHTML = "Earthborne Astra";
       table.rows[7].cells[0].innerHTML = "Tower Idean";
       break;
-    case "star": // TODO: update the table size for death and star
+    case "star":
       table.rows[2].cells[0].innerHTML = "Star Veritas";
       table.rows[3].cells[0].innerHTML = "Wind Verum Proof";
       table.rows[4].cells[0].innerHTML = "Ventus Luster";
@@ -358,6 +448,18 @@ const setupTable = (arcarum, uncapLevel) => {
       if (uncapLevel === "five") {
         table.rows[3].cells[0].innerHTML = "Celsus Fragment";
         table.rows[5].cells[0].innerHTML = "Thunderbolt Wheel";
+      }
+
+      if (uncapLevel === "one") {
+        setupStarAndDeathTables("star", "one");
+      } else if (uncapLevel === "two") {
+        setupStarAndDeathTables("star", "two");
+      } else if (uncapLevel === "three") {
+        setupStarAndDeathTables("star", "three");
+      } else if (uncapLevel === "four") {
+        setupStarAndDeathTables("star", "four");
+      } else if (uncapLevel === "five") {
+        setupStarAndDeathTables("star", "five");
       }
 
       table.rows[6].cells[0].innerHTML = "Lightborne Astra";
@@ -416,6 +518,18 @@ const setupTable = (arcarum, uncapLevel) => {
       break;
     default:
       console.log("Previous Arcarum displaying.");
+  }
+
+  // Add this row only once we are looking at the 5 star uncap table
+  if (uncapLevel === "five") {
+    let eternitySandRow = table.insertRow(-1);
+    let eternitySandTitle = eternitySandRow.insertCell(0);
+    let eternitySandNeed = eternitySandRow.insertCell(1);
+    let eternitySandHave = eternitySandRow.insertCell(2);
+
+    eternitySandTitle.innerHTML = "Eternity Sand";
+    eternitySandNeed.innerHTML = "3";
+    eternitySandHave.innerHTML = "X";
   }
 }
 
