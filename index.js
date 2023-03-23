@@ -89,7 +89,7 @@ const setupStarAndDeathTables = (arcarum, uncapLevel) => {
         table.rows[8].cells[0].innerHTML = "Aqua Luster";
         table.rows[8].cells[1].innerHTML = "35";
         table.rows[8].cells[2].innerHTML = "X";
-        // remove table.rows[9]
+        table.deleteRow(9);
       }
       break;
     case "star":
@@ -119,7 +119,7 @@ const setupStarAndDeathTables = (arcarum, uncapLevel) => {
         table.rows[8].cells[0].innerHTML = "Ignis Luster";
         table.rows[8].cells[1].innerHTML = "35";
         table.rows[8].cells[2].innerHTML = "X";
-        // remove table.rows[9]
+        table.deleteRow(9);
       }
       break;
     default:
@@ -311,7 +311,14 @@ const setupTable = (arcarum, uncapLevel) => {
       table.rows[7].cells[2].innerHTML = "X";
 
       // Setup ninth row
-      // Add Eternity Sand x3 here
+      let eternitySandRow = table.insertRow(-1);
+      let eternitySandTitle = eternitySandRow.insertCell(0);
+      let eternitySandNeed = eternitySandRow.insertCell(1);
+      let eternitySandHave = eternitySandRow.insertCell(2);
+
+      eternitySandTitle.innerHTML = "Eternity Sand";
+      eternitySandNeed.innerHTML = "3";
+      eternitySandHave.innerHTML = "X";
       break;
     case "full": // this case will create 5 tables showing each of the previous tables
       console.log("full uncap was pressed...");
@@ -518,18 +525,6 @@ const setupTable = (arcarum, uncapLevel) => {
       break;
     default:
       console.log("Previous Arcarum displaying.");
-  }
-
-  // Add this row only once we are looking at the 5 star uncap table
-  if (uncapLevel === "five") {
-    let eternitySandRow = table.insertRow(-1);
-    let eternitySandTitle = eternitySandRow.insertCell(0);
-    let eternitySandNeed = eternitySandRow.insertCell(1);
-    let eternitySandHave = eternitySandRow.insertCell(2);
-
-    eternitySandTitle.innerHTML = "Eternity Sand";
-    eternitySandNeed.innerHTML = "3";
-    eternitySandHave.innerHTML = "X";
   }
 }
 
