@@ -49,8 +49,22 @@ const setupButtons = () => {
   });
 }
 
+// Returns true if a matching row already exists in the rows array, and false otherwise
+const rowExists = (rows, newRow) => {
+  return rows.some(row => {
+    return Object.keys(newRow).every(key => row[key] === newRow[key]);
+  });
+}
+
 const setupStarAndDeathTables = (arcarum, uncapLevel) => {
     // Insert two more rows as Death uses more materials
+    // if (rowExists(table.rows, verumRow)) {
+    //  console.log("Row already exists.");
+    //} else {
+    //    table.rows.push(verumRow);
+    //}
+    console.log(table.rows);
+
     let verumRow = table.insertRow(-1);
     let verumTitleCell = verumRow.insertCell(0);
     let verumNeedCell = verumRow.insertCell(1);
