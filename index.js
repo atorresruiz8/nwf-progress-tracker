@@ -54,61 +54,195 @@ const setupTable = (arcarum, uncapLevel) => {
 
   switch (uncapLevel) {
     case "one":
-      console.log("one star uncap was pressed...");
+      // Setup first row
+      table.rows[0].cells[0].innerHTML = "1 &#9733; Uncap"; // &#9733; is HTML code for a solid star symbol
+      table.rows[0].cells[1].innerHTML = "Need";
+      table.rows[0].cells[2].innerHTML = "Have";
+
+      // Setup second row
+      table.rows[1].cells[0].innerHTML = "New World Quartz";
+      table.rows[1].cells[1].innerHTML = "5";
+      table.rows[1].cells[2].innerHTML = "X";
+
+      // Setup third row
+      table.rows[2].cells[1].innerHTML = "70";
+      table.rows[2].cells[2].innerHTML = "X";
+
+      // Setup fourth row
+      table.rows[3].cells[1].innerHTML = "100";
+      table.rows[3].cells[2].innerHTML = "X";
+
+      // Setup fifth row
+      table.rows[4].cells[1].innerHTML = "15";
+      table.rows[4].cells[2].innerHTML = "X";
+
+      // Setup sixth row
+      table.rows[5].cells[0].innerHTML = "Malice Fragment";
+      table.rows[5].cells[1].innerHTML = "30";
+      table.rows[5].cells[2].innerHTML = "X";
+
+      // Setup seventh row
+      table.rows[6].cells[1].innerHTML = "30";
+      table.rows[6].cells[2].innerHTML = "X";
+
+      // Setup eighth row
+      table.rows[7].cells[1].innerHTML = "0";
+      table.rows[7].cells[2].innerHTML = "0";
       break;
     case "two":
-      console.log("two star uncap was pressed...");
+      // Setup first row
+      table.rows[0].cells[0].innerHTML = "2 &#9733; Uncap"; // &#9733; is HTML code for a solid star symbol
+      table.rows[0].cells[1].innerHTML = "Need";
+      table.rows[0].cells[2].innerHTML = "Have";
+
+      // Setup second row
+      table.rows[1].cells[0].innerHTML = "New World Quartz";
+      table.rows[1].cells[1].innerHTML = "10";
+      table.rows[1].cells[2].innerHTML = "X";
+
+      // Setup third row
+      table.rows[2].cells[1].innerHTML = "100";
+      table.rows[2].cells[2].innerHTML = "X";
+
+      // Setup fourth row
+      table.rows[3].cells[1].innerHTML = "150";
+      table.rows[3].cells[2].innerHTML = "X";
+
+      // Setup fifth row
+      table.rows[4].cells[1].innerHTML = "30";
+      table.rows[4].cells[2].innerHTML = "X";
+
+      // Setup sixth row
+      table.rows[5].cells[0].innerHTML = "Verdant Azurite";
+      table.rows[5].cells[1].innerHTML = "20";
+      table.rows[5].cells[2].innerHTML = "X";
+
+      // Setup seventh row
+      table.rows[6].cells[1].innerHTML = "50";
+      table.rows[6].cells[2].innerHTML = "X";
+
+      // Setup eighth row
+      table.rows[7].cells[1].innerHTML = "30";
+      table.rows[7].cells[2].innerHTML = "X";
       break;
     case "three":
-      console.log("three star uncap was pressed...");
+      // Setup first row
+      table.rows[0].cells[0].innerHTML = "3 &#9733; Uncap"; // &#9733; is HTML code for a solid star symbol
+      table.rows[0].cells[1].innerHTML = "Need";
+      table.rows[0].cells[2].innerHTML = "Have";
+
+      // Setup second row
+      table.rows[1].cells[0].innerHTML = "New World Quartz";
+      table.rows[1].cells[1].innerHTML = "20";
+      table.rows[1].cells[2].innerHTML = "X";
+
+      // Setup third row
+      table.rows[2].cells[1].innerHTML = "130";
+      table.rows[2].cells[2].innerHTML = "X";
+
+      // Setup fourth row
+      table.rows[3].cells[1].innerHTML = "200";
+      table.rows[3].cells[2].innerHTML = "X";
+
+      // Setup fifth row
+      table.rows[4].cells[1].innerHTML = "50";
+      table.rows[4].cells[2].innerHTML = "X";
+
+      // Setup sixth row
+      table.rows[5].cells[0].innerHTML = "Wamdus' Jewel";
+      table.rows[5].cells[1].innerHTML = "20";
+      table.rows[5].cells[2].innerHTML = "X";
+
+      // Setup seventh row
+      table.rows[6].cells[1].innerHTML = "100";
+      table.rows[6].cells[2].innerHTML = "X";
+
+      // Setup eighth row
+      table.rows[7].cells[1].innerHTML = "70";
+      table.rows[7].cells[2].innerHTML = "X";
       break;
     case "four":
-      console.log("four star uncap was pressed...");
+      // Setup first row
+      table.rows[0].cells[0].innerHTML = "4 &#9733; Uncap"; // &#9733; is HTML code for a solid star symbol
+      table.rows[0].cells[1].innerHTML = "Need";
+      table.rows[0].cells[2].innerHTML = "Have";
+
+      // Setup second row
+      table.rows[1].cells[0].innerHTML = "New World Quartz";
+      table.rows[1].cells[1].innerHTML = "20";
+      table.rows[1].cells[2].innerHTML = "X";
+
+      // Setup third row
+      table.rows[2].cells[1].innerHTML = "150";
+      table.rows[2].cells[2].innerHTML = "X";
+
+      // Setup fourth row
+      table.rows[3].cells[1].innerHTML = "250";
+      table.rows[3].cells[2].innerHTML = "X";
+
+      // Setup fifth row
+      table.rows[4].cells[1].innerHTML = "60";
+      table.rows[4].cells[2].innerHTML = "X";
+
+      // Setup sixth row
+      table.rows[5].cells[0].innerHTML = "Wamdus' Jewel";
+      table.rows[5].cells[1].innerHTML = "30";
+      table.rows[5].cells[2].innerHTML = "X";
+
+      // Setup seventh row
+      table.rows[6].cells[1].innerHTML = "120";
+      table.rows[6].cells[2].innerHTML = "X";
+
+      // Setup eighth row
+      table.rows[7].cells[1].innerHTML = "100";
+      table.rows[7].cells[2].innerHTML = "X";
       break;
     case "five":
-      console.log("five star uncap was pressed...");
+      // Setup first row
+      table.rows[0].cells[0].innerHTML = "5 &#9733; Uncap"; // &#9733; is HTML code for a solid star symbol
+      table.rows[0].cells[1].innerHTML = "Need";
+      table.rows[0].cells[2].innerHTML = "Have";
+
+      // Setup second row
+      table.rows[1].cells[0].innerHTML = "New World Quartz";
+      table.rows[1].cells[1].innerHTML = "30";
+      table.rows[1].cells[2].innerHTML = "X";
+
+      // Setup third row
+      table.rows[2].cells[1].innerHTML = "170";
+      table.rows[2].cells[2].innerHTML = "X";
+
+      // Setup fourth row
+      table.rows[3].cells[0].innerHTML = "Bellator Fragment";
+      table.rows[3].cells[1].innerHTML = "30";
+      table.rows[3].cells[2].innerHTML = "X";
+
+      // Setup fifth row
+      table.rows[4].cells[1].innerHTML = "70";
+      table.rows[4].cells[2].innerHTML = "X";
+
+      // Setup sixth row
+      table.rows[5].cells[0].innerHTML = "Abyssal Tragedy";
+      table.rows[5].cells[1].innerHTML = "30";
+      table.rows[5].cells[2].innerHTML = "X";
+
+      // Setup seventh row
+      table.rows[6].cells[1].innerHTML = "140";
+      table.rows[6].cells[2].innerHTML = "X";
+
+      // Setup eighth row
+      table.rows[7].cells[1].innerHTML = "130";
+      table.rows[7].cells[2].innerHTML = "X";
+
+      // Setup ninth row
+      // Add Eternity Sand x3 here
       break;
-    case "full":
+    case "full": // this case will create 5 tables showing each of the previous tables
       console.log("full uncap was pressed...");
       break;
     default:
-      console.log("no uncap level was pressed..."); 
+      console.log("Previous uncap level displaying."); 
   }
-
-  // Setup first row
-  table.rows[0].cells[0].innerHTML = "1 &#9733; Uncap"; // &#9733; is HTML code for a solid star symbol
-  table.rows[0].cells[1].innerHTML = "Need";
-  table.rows[0].cells[2].innerHTML = "Have";
-
-  // Setup second row
-  table.rows[1].cells[0].innerHTML = "New World Quartz";
-  table.rows[1].cells[1].innerHTML = "5";
-  table.rows[1].cells[2].innerHTML = "X";
-
-  // Setup third row
-  table.rows[2].cells[1].innerHTML = "70";
-  table.rows[2].cells[2].innerHTML = "X";
-
-  // Setup fourth row
-  table.rows[3].cells[1].innerHTML = "100";
-  table.rows[3].cells[2].innerHTML = "X";
-
-  // Setup fifth row
-  table.rows[4].cells[1].innerHTML = "15";
-  table.rows[4].cells[2].innerHTML = "X";
-
-  // Setup sixth row
-  table.rows[5].cells[0].innerHTML = "Malice Fragment";
-  table.rows[5].cells[1].innerHTML = "30";
-  table.rows[5].cells[2].innerHTML = "X";
-
-  // Setup seventh row
-  table.rows[6].cells[1].innerHTML = "30";
-  table.rows[6].cells[2].innerHTML = "X";
-
-  // Setup eighth row
-  table.rows[7].cells[1].innerHTML = "0";
-  table.rows[7].cells[2].innerHTML = "0";
 
   // This switch statement checks which weapon we're looking at, so we can display appropriate material names
   switch (arcarum) {
@@ -183,7 +317,7 @@ const setupTable = (arcarum, uncapLevel) => {
       table.rows[7].cells[0].innerHTML = "Judgement Idean";
       break;
     default:
-      console.log("no arcarum was loaded");
+      console.log("Previous Arcarum displaying.");
   }
 }
 
@@ -207,7 +341,27 @@ const handleUncapButtonClick = (event) => {
   const buttonText = event.target.textContent;
 
   // Send the buttonText to the setupTable function so we know which material spread to load
-  console.log("uncap button " + buttonText + " was clicked...");
+  switch (table.rows[2].cells[0].innerHTML) {
+    case "Justice Veritas":
+      if (buttonText === "1 ★") {
+        setupTable("justice", "one");
+      } else if (buttonText === "2 ★") {
+        setupTable("justice", "two");
+      } else if (buttonText === "3 ★") {
+        setupTable("justice", "three");
+      } else if (buttonText === "4 ★") {
+        setupTable("justice", "four");
+      } else if (buttonText === "5 ★") {
+        setupTable("justice", "five");
+      } else if (buttonText === "Full Uncap") {
+        setupTable("justice", "full");
+      }
+      break;
+    default:
+      console.log("Previous table displaying.");
+  }
+
+  render();
 }
 
 const setupUncapButtons = () => {
@@ -298,7 +452,7 @@ const render = (buttonText) => {
       setupTable("judgement", "one");
       break;
     default:
-      console.log("no button was pressed...");
+      console.log("Loading table.");
   }
 
   // add the element to the container
