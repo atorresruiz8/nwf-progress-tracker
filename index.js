@@ -51,7 +51,9 @@ const setupButtons = () => {
 
 const setupTable = (arcarum, uncapLevel) => {
   // TODO: make the "Have" column a textbox
-
+  // TODO: add images of each material
+  // TODO: style the table to look prettier
+  // TODO: Create and render all 5 tables for "Full Uncap" button
   switch (uncapLevel) {
     case "one":
       // Setup first row
@@ -149,7 +151,6 @@ const setupTable = (arcarum, uncapLevel) => {
       table.rows[4].cells[2].innerHTML = "X";
 
       // Setup sixth row
-      table.rows[5].cells[0].innerHTML = "Wamdus' Jewel";
       table.rows[5].cells[1].innerHTML = "20";
       table.rows[5].cells[2].innerHTML = "X";
 
@@ -185,7 +186,6 @@ const setupTable = (arcarum, uncapLevel) => {
       table.rows[4].cells[2].innerHTML = "X";
 
       // Setup sixth row
-      table.rows[5].cells[0].innerHTML = "Wamdus' Jewel";
       table.rows[5].cells[1].innerHTML = "30";
       table.rows[5].cells[2].innerHTML = "X";
 
@@ -213,7 +213,6 @@ const setupTable = (arcarum, uncapLevel) => {
       table.rows[2].cells[2].innerHTML = "X";
 
       // Setup fourth row
-      table.rows[3].cells[0].innerHTML = "Bellator Fragment";
       table.rows[3].cells[1].innerHTML = "30";
       table.rows[3].cells[2].innerHTML = "X";
 
@@ -222,7 +221,6 @@ const setupTable = (arcarum, uncapLevel) => {
       table.rows[4].cells[2].innerHTML = "X";
 
       // Setup sixth row
-      table.rows[5].cells[0].innerHTML = "Abyssal Tragedy";
       table.rows[5].cells[1].innerHTML = "30";
       table.rows[5].cells[2].innerHTML = "X";
 
@@ -250,6 +248,16 @@ const setupTable = (arcarum, uncapLevel) => {
       table.rows[2].cells[0].innerHTML = "Justice Veritas";
       table.rows[3].cells[0].innerHTML = "Water Verum Proof";
       table.rows[4].cells[0].innerHTML = "Aqua Luster";
+      
+      if (uncapLevel === "three" || uncapLevel === "four") {
+        table.rows[5].cells[0].innerHTML = "Wamdus' Jewel";
+      }
+
+      if (uncapLevel === "five") {
+        table.rows[3].cells[0].innerHTML = "Bellator Fragment";
+        table.rows[5].cells[0].innerHTML = "Abyssal Tragedy";
+      }
+
       table.rows[6].cells[0].innerHTML = "Aquaborne Astra";
       table.rows[7].cells[0].innerHTML = "Justice Idean";
       break;
@@ -257,6 +265,16 @@ const setupTable = (arcarum, uncapLevel) => {
       table.rows[2].cells[0].innerHTML = "Hanged Man Veritas";
       table.rows[3].cells[0].innerHTML = "Earth Verum Proof";
       table.rows[4].cells[0].innerHTML = "Terra Luster";
+
+      if (uncapLevel === "three" || uncapLevel === "four") {
+        table.rows[5].cells[0].innerHTML = "Galleon's Jewel";
+      }
+
+      if (uncapLevel === "five") {
+        table.rows[3].cells[0].innerHTML = "Aquila Fragment";
+        table.rows[5].cells[0].innerHTML = "Insular Core";
+      }
+
       table.rows[6].cells[0].innerHTML = "Earthborne Astra";
       table.rows[7].cells[0].innerHTML = "Hanged Man Idean";
       break;
@@ -264,6 +282,16 @@ const setupTable = (arcarum, uncapLevel) => {
       table.rows[2].cells[0].innerHTML = "Death Veritas";
       table.rows[3].cells[0].innerHTML = "Earth Verum Proof";
       table.rows[4].cells[0].innerHTML = "Terra Luster";
+
+      if (uncapLevel === "three" || uncapLevel === "four") {
+        table.rows[5].cells[0].innerHTML = "Fediel's Jewel";
+      }
+
+      if (uncapLevel === "five") {
+        table.rows[3].cells[0].innerHTML = "Celsus Fragment";
+        table.rows[5].cells[0].innerHTML = "Todestrieb";
+      }
+
       table.rows[6].cells[0].innerHTML = "Darkborne Astra";
       table.rows[7].cells[0].innerHTML = "Death Idean";
       break;
@@ -271,6 +299,16 @@ const setupTable = (arcarum, uncapLevel) => {
       table.rows[2].cells[0].innerHTML = "Temperance Veritas";
       table.rows[3].cells[0].innerHTML = "Wind Verum Proof";
       table.rows[4].cells[0].innerHTML = "Ventus Luster";
+
+      if (uncapLevel === "three" || uncapLevel === "four") {
+        table.rows[5].cells[0].innerHTML = "Ewiyar's Jewel";
+      }
+
+      if (uncapLevel === "five") {
+        table.rows[3].cells[0].innerHTML = "Celsus Fragment";
+        table.rows[5].cells[0].innerHTML = "Gale Rock";
+      }
+
       table.rows[6].cells[0].innerHTML = "Windborne Astra";
       table.rows[7].cells[0].innerHTML = "Temperance Idean";
       break;
@@ -278,6 +316,16 @@ const setupTable = (arcarum, uncapLevel) => {
       table.rows[2].cells[0].innerHTML = "Devil Veritas";
       table.rows[3].cells[0].innerHTML = "Fire Verum Proof";
       table.rows[4].cells[0].innerHTML = "Ignis Luster";
+
+      if (uncapLevel === "three" || uncapLevel === "four") {
+        table.rows[5].cells[0].innerHTML = "Wilnas' Jewel";
+      }
+
+      if (uncapLevel === "five") {
+        table.rows[3].cells[0].innerHTML = "Aquila Fragment";
+        table.rows[5].cells[0].innerHTML = "Smoldering Rubble";
+      }
+
       table.rows[6].cells[0].innerHTML = "Flameborne Astra";
       table.rows[7].cells[0].innerHTML = "Devil Idean";
       break;
@@ -285,6 +333,16 @@ const setupTable = (arcarum, uncapLevel) => {
       table.rows[2].cells[0].innerHTML = "Tower Veritas";
       table.rows[3].cells[0].innerHTML = "Earth Verum Proof";
       table.rows[4].cells[0].innerHTML = "Terra Luster";
+
+      if (uncapLevel === "three" || uncapLevel === "four") {
+        table.rows[5].cells[0].innerHTML = "Galleon's Jewel";
+      }
+
+      if (uncapLevel === "five") {
+        table.rows[3].cells[0].innerHTML = "Celsus Fragment";
+        table.rows[5].cells[0].innerHTML = "Insular Core";
+      }
+
       table.rows[6].cells[0].innerHTML = "Earthborne Astra";
       table.rows[7].cells[0].innerHTML = "Tower Idean";
       break;
@@ -292,6 +350,16 @@ const setupTable = (arcarum, uncapLevel) => {
       table.rows[2].cells[0].innerHTML = "Star Veritas";
       table.rows[3].cells[0].innerHTML = "Wind Verum Proof";
       table.rows[4].cells[0].innerHTML = "Ventus Luster";
+
+      if (uncapLevel === "three" || uncapLevel === "four") {
+        table.rows[5].cells[0].innerHTML = "Lu Woh's Jewel";
+      }
+
+      if (uncapLevel === "five") {
+        table.rows[3].cells[0].innerHTML = "Celsus Fragment";
+        table.rows[5].cells[0].innerHTML = "Thunderbolt Wheel";
+      }
+
       table.rows[6].cells[0].innerHTML = "Lightborne Astra";
       table.rows[7].cells[0].innerHTML = "Star Idean";
       break;
@@ -299,6 +367,16 @@ const setupTable = (arcarum, uncapLevel) => {
       table.rows[2].cells[0].innerHTML = "Moon Veritas";
       table.rows[3].cells[0].innerHTML = "Water Verum Proof";
       table.rows[4].cells[0].innerHTML = "Aqua Luster";
+
+      if (uncapLevel === "three" || uncapLevel === "four") {
+        table.rows[5].cells[0].innerHTML = "Wamdus' Jewel";
+      }
+
+      if (uncapLevel === "five") {
+        table.rows[3].cells[0].innerHTML = "Bellator Fragment";
+        table.rows[5].cells[0].innerHTML = "Abyssal Tragedy";
+      }
+
       table.rows[6].cells[0].innerHTML = "Aquaborne Astra";
       table.rows[7].cells[0].innerHTML = "Moon Idean";
       break;
@@ -306,6 +384,16 @@ const setupTable = (arcarum, uncapLevel) => {
       table.rows[2].cells[0].innerHTML = "Sun Veritas";
       table.rows[3].cells[0].innerHTML = "Fire Verum Proof";
       table.rows[4].cells[0].innerHTML = "Ignis Luster";
+
+      if (uncapLevel === "three" || uncapLevel === "four") {
+        table.rows[5].cells[0].innerHTML = "Wilnas' Jewel";
+      }
+
+      if (uncapLevel === "five") {
+        table.rows[3].cells[0].innerHTML = "Aquila Fragment";
+        table.rows[5].cells[0].innerHTML = "Smoldering Rubble";
+      }
+
       table.rows[6].cells[0].innerHTML = "Flameborne Astra";
       table.rows[7].cells[0].innerHTML = "Sun Idean";
       break;
@@ -313,6 +401,16 @@ const setupTable = (arcarum, uncapLevel) => {
       table.rows[2].cells[0].innerHTML = "Judgement Veritas";
       table.rows[3].cells[0].innerHTML = "Wind Verum Proof";
       table.rows[4].cells[0].innerHTML = "Ventus Luster";
+
+      if (uncapLevel === "three" || uncapLevel === "four") {
+        table.rows[5].cells[0].innerHTML = "Ewiyar's Jewel";
+      }
+
+      if (uncapLevel === "five") {
+        table.rows[3].cells[0].innerHTML = "Bellator Fragment";
+        table.rows[5].cells[0].innerHTML = "Gale Rock";
+      }
+
       table.rows[6].cells[0].innerHTML = "Windborne Astra";
       table.rows[7].cells[0].innerHTML = "Judgement Idean";
       break;
