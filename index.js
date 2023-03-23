@@ -50,8 +50,30 @@ const setupButtons = () => {
 }
 
 const setupTable = (arcarum, uncapLevel) => {
-  // TODO: add checks to see which uncap level we're displaying
   // TODO: make the "Have" column a textbox
+
+  switch (uncapLevel) {
+    case "one":
+      console.log("one star uncap was pressed...");
+      break;
+    case "two":
+      console.log("two star uncap was pressed...");
+      break;
+    case "three":
+      console.log("three star uncap was pressed...");
+      break;
+    case "four":
+      console.log("four star uncap was pressed...");
+      break;
+    case "five":
+      console.log("five star uncap was pressed...");
+      break;
+    case "full":
+      console.log("full uncap was pressed...");
+      break;
+    default:
+      console.log("no uncap level was pressed..."); 
+  }
 
   // Setup first row
   table.rows[0].cells[0].innerHTML = "1 &#9733; Uncap"; // &#9733; is HTML code for a solid star symbol
@@ -234,36 +256,49 @@ const render = (buttonText) => {
   let element = document.createElement("div");
   
   // Check which button has been pressed so we know what elements to load into the table
-  if (buttonText === "Rise of Justice") {
+  switch (buttonText) {
+    case "Rise of Justice":
       table.style = "background-color: rgb(31, 81, 255); opacity: 100%;";
       setupTable("justice", "one");
-  } else if (buttonText === "Binds of the Hanged Man") {
+      break;
+    case "Binds of the Hanged Man":
       table.style = "background-color: rgb(205, 127, 50); opacity: 100%;";
       setupTable("hanged-man", "one");
-  } else if (buttonText === "Pain of Death") {
+      break;
+    case "Pain of Death":
       table.style = "background-color: rgb(54, 69, 79); opacity: 100%;";
       setupTable("death", "one");
-  } else if (buttonText === "Theater of Temperance") {
+      break;
+    case "Theater of Temperance":
       table.style = "background-color: rgb(0, 163, 108); opacity: 100%;";
       setupTable("temperance", "one");
-  } else if (buttonText === "Kiss of the Devil") {
+      break;
+    case "Kiss of the Devil":
       table.style = "background-color: rgb(227, 66, 52); opacity: 100%;";
       setupTable("devil", "one");
-  } else if (buttonText === "Collapse of the Tower") {
+      break;
+    case "Collapse of the Tower":
       table.style = "background-color: rgb(205, 127, 50); opacity: 100%;";
       setupTable("tower", "one");
-  } else if (buttonText === "Shooting of the Star") {
+      break;
+    case "Shooting of the Star":
       table.style = "background-color: rgb(255, 191, 0); opacity: 100%;";
       setupTable("star", "one");
-  } else if (buttonText === "Reflection of the Moon") {
+      break;
+    case "Reflection of the Moon":
       table.style = "background-color: rgb(31, 81, 255); opacity: 100%;";
       setupTable("moon", "one");
-  } else if (buttonText === "Heat of the Sun") {
+      break;
+    case "Heat of the Sun":
       table.style = "background-color: rgb(227, 66, 52); opacity: 100%;";
       setupTable("sun", "one");
-  } else if (buttonText === "Melody of Judgement") {
+      break;
+    case "Melody of Judgement":
       table.style = "background-color: rgb(0, 163, 108); opacity: 100%;";
       setupTable("judgement", "one");
+      break;
+    default:
+      console.log("no button was pressed...");
   }
 
   // add the element to the container
