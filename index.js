@@ -355,8 +355,133 @@ const handleUncapButtonClick = (event) => {
         setupTable("justice", "five");
       } else if (buttonText === "Full Uncap") {
         setupTable("justice", "full");
-      }
-      break;
+      } break;
+    case "Hanged Man Veritas":
+      if (buttonText === "1 ★") {
+        setupTable("hanged-man", "one");
+      } else if (buttonText === "2 ★") {
+        setupTable("hanged-man", "two");
+      } else if (buttonText === "3 ★") {
+        setupTable("hanged-man", "three");
+      } else if (buttonText === "4 ★") {
+        setupTable("hanged-man", "four");
+      } else if (buttonText === "5 ★") {
+        setupTable("hanged-man", "five");
+      } else if (buttonText === "Full Uncap") {
+        setupTable("hanged-man", "full");
+      } break;
+    case "Death Veritas":
+      if (buttonText === "1 ★") {
+        setupTable("death", "one");
+      } else if (buttonText === "2 ★") {
+        setupTable("death", "two");
+      } else if (buttonText === "3 ★") {
+        setupTable("death", "three");
+      } else if (buttonText === "4 ★") {
+        setupTable("death", "four");
+      } else if (buttonText === "5 ★") {
+        setupTable("death", "five");
+      } else if (buttonText === "Full Uncap") {
+        setupTable("death", "full");
+      } break;
+    case "Temperance Veritas":
+      if (buttonText === "1 ★") {
+        setupTable("temperance", "one");
+      } else if (buttonText === "2 ★") {
+        setupTable("temperance", "two");
+      } else if (buttonText === "3 ★") {
+        setupTable("temperance", "three");
+      } else if (buttonText === "4 ★") {
+        setupTable("temperance", "four");
+      } else if (buttonText === "5 ★") {
+        setupTable("temperance", "five");
+      } else if (buttonText === "Full Uncap") {
+        setupTable("temperance", "full");
+      } break;
+     case "Devil Veritas":
+      if (buttonText === "1 ★") {
+        setupTable("devil", "one");
+      } else if (buttonText === "2 ★") {
+        setupTable("devil", "two");
+      } else if (buttonText === "3 ★") {
+        setupTable("devil", "three");
+      } else if (buttonText === "4 ★") {
+        setupTable("devil", "four");
+      } else if (buttonText === "5 ★") {
+        setupTable("devil", "five");
+      } else if (buttonText === "Full Uncap") {
+        setupTable("devil", "full");
+      } break;
+    case "Tower Veritas":
+      if (buttonText === "1 ★") {
+        setupTable("tower", "one");
+      } else if (buttonText === "2 ★") {
+        setupTable("tower", "two");
+      } else if (buttonText === "3 ★") {
+        setupTable("tower", "three");
+      } else if (buttonText === "4 ★") {
+        setupTable("tower", "four");
+      } else if (buttonText === "5 ★") {
+        setupTable("tower", "five");
+      } else if (buttonText === "Full Uncap") {
+        setupTable("tower", "full");
+      } break;
+    case "Star Veritas":
+      if (buttonText === "1 ★") {
+        setupTable("star", "one");
+      } else if (buttonText === "2 ★") {
+        setupTable("star", "two");
+      } else if (buttonText === "3 ★") {
+        setupTable("star", "three");
+      } else if (buttonText === "4 ★") {
+        setupTable("star", "four");
+      } else if (buttonText === "5 ★") {
+        setupTable("star", "five");
+      } else if (buttonText === "Full Uncap") {
+        setupTable("star", "full");
+      } break;
+    case "Moon Veritas":
+      if (buttonText === "1 ★") {
+        setupTable("moon", "one");
+      } else if (buttonText === "2 ★") {
+        setupTable("moon", "two");
+      } else if (buttonText === "3 ★") {
+        setupTable("moon", "three");
+      } else if (buttonText === "4 ★") {
+        setupTable("moon", "four");
+      } else if (buttonText === "5 ★") {
+        setupTable("moon", "five");
+      } else if (buttonText === "Full Uncap") {
+        setupTable("moon", "full");
+      } break;
+    case "Sun Veritas":
+      if (buttonText === "1 ★") {
+        setupTable("sun", "one");
+      } else if (buttonText === "2 ★") {
+        setupTable("sun", "two");
+      } else if (buttonText === "3 ★") {
+        setupTable("sun", "three");
+      } else if (buttonText === "4 ★") {
+        setupTable("sun", "four");
+      } else if (buttonText === "5 ★") {
+        setupTable("sun", "five");
+      } else if (buttonText === "Full Uncap") {
+        setupTable("sun", "full");
+      } break;
+    case "Judgement Veritas":
+      if (buttonText === "1 ★") {
+        setupTable("judgement", "one");
+      } else if (buttonText === "2 ★") {
+        setupTable("judgement", "two");
+      } else if (buttonText === "3 ★") {
+        setupTable("judgement", "three");
+      } else if (buttonText === "4 ★") {
+        setupTable("judgement", "four");
+      } else if (buttonText === "5 ★") {
+        setupTable("judgement", "five");
+      } else if (buttonText === "Full Uncap") {
+        setupTable("judgement", "full");
+      } break;
     default:
       console.log("Previous table displaying.");
   }
